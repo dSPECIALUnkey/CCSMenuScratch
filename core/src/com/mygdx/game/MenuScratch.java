@@ -51,8 +51,7 @@ public class MenuScratch extends ApplicationAdapter {
 		ibsHelp.down = skButtons.getDrawable("IBTNDown");
 		ibsHelp.checked = skButtons.getDrawable("IBTNUp");
 		ibHelp = new ImageButton(ibsHelp);
-		
-		//ibPlay.setSize(203, 100); // Sizing for Desktop Launcher
+
 		ibPlay.setSize(814, 160); // Sizing for Android
 		ibHelp.setSize(124, 124); // Sizing for Android
 		ibPlay.setPosition((Gdx.graphics.getWidth() / 2) - ibPlay.getWidth() / 2,
