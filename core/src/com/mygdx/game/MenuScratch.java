@@ -63,29 +63,33 @@ public class MenuScratch implements com.badlogic.gdx.Screen {
         ibHelp.setName("help");
         ibPlay.addListener(new InputListener() {//http://gamedev.stackexchange.com/questions/60123/registering-inputlistener-in-libgdx
 
-            @Override
+            // Source for screen change on button UP instead of button DOWN
+            // https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/scenes/scene2d/InputListener.html
+
+
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
-                //System.out.println("Play");
+                return true;
+            }
+
+            @Override
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 screenHandler.screenChange(ibPlay.getName());
-                //setScreen(ScreenManager);
-                return false;
             }
         });
 
         ibHelp.addListener(new InputListener() {
 
-            @Override
-            public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
-                //screenHandler.screenChange(ibHelp.getName());
-                return false;
+
+            public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
+                return true;
             }
 
-            /* @Override
-            public boolean touchUp(InputEvent event, float x, float y, int pointer, int button) {
+            @Override
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 screenHandler.screenChange(ibHelp.getName());
-                return false;
-            } */
+            }
         });
+
         stage.addActor(ibPlay);
         stage.addActor(ibHelp);
 
