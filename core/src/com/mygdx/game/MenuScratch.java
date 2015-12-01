@@ -25,7 +25,7 @@ import javafx.stage.Screen;
 
 public class MenuScratch implements com.badlogic.gdx.Screen {
     SpriteBatch batch;
-    Texture splash;
+    Texture txSplash;
     TextureAtlas taButtons;
     ImageButton.ImageButtonStyle ibsPlay, ibsHelp;
     ImageButton ibPlay, ibHelp;
@@ -38,7 +38,7 @@ public class MenuScratch implements com.badlogic.gdx.Screen {
         stage = new Stage();
         Gdx.input.setInputProcessor(stage);
         batch = new SpriteBatch();
-        splash = new Texture("MainMenu.png");
+        txSplash = new Texture("MainMenu.png");
         taButtons = new TextureAtlas("Buttons/Buttons.atlas");
         skButtons = new Skin();
         skButtons.addRegions(taButtons);
@@ -105,7 +105,7 @@ public class MenuScratch implements com.badlogic.gdx.Screen {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
-        batch.draw(splash, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        batch.draw(txSplash, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         batch.end();
         stage.act(Gdx.graphics.getDeltaTime());
         stage.draw();

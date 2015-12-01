@@ -12,14 +12,14 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
  */
 public class Instructionpage implements Screen {
     ScreenHandler screenHandler;
-    Texture instruction;
+    Texture txInstruction;
     SpriteBatch batch;
 
 
     public Instructionpage(ScreenHandler _screenHandler){
         this.screenHandler=_screenHandler;
         batch = new SpriteBatch();
-        instruction = new Texture("Instruction Placeholder.jpg");
+        txInstruction = new Texture("Instruction Placeholder.jpg");
 
     }
     @Override
@@ -32,7 +32,7 @@ public class Instructionpage implements Screen {
         Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
-        batch.draw(instruction, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        batch.draw(txInstruction, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         batch.end();
 
     }
